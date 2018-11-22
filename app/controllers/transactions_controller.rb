@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+  before_action :set_user, only: [index, by_user]
 
   def index
   end
@@ -10,6 +11,12 @@ class TransactionsController < ApplicationController
   end
 
   def by_user
+  end
+
+  private
+
+  def set_user
+    @user = User.find_by(id: params[:id])
   end
 
 end
