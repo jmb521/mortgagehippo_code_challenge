@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_22_225800) do
+ActiveRecord::Schema.define(version: 2018_11_22_231436) do
 
   create_table "api_users", force: :cascade do |t|
     t.string "api_key"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2018_11_22_225800) do
 
   create_table "transactions", force: :cascade do |t|
     t.integer "coin_id"
-    t.integer "user_id"
+    t.integer "api_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
