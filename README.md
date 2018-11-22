@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-=======
 ## MortgageHippo Coding Challenge: Coin Machine API
 ------
 Welcome to the MortgageHippo Coding Challenge. For this challenge you will need to create a RESTful Rails API that will act as a Coin Machine, taking in Coins and performing a variety of functions. This README will be broken up into steps, please read through the entire README before beginning.
@@ -85,4 +59,3 @@ When you are ready to submit this challenge, please email elliott@mortgagehippo.
 * The URL of the deployed site
 * The URL of the GitHub Repo
 * Any additional notes you'd like to include
->>>>>>> 45076ab0f05077eeba2759c1eeccabd4005d9d0d
