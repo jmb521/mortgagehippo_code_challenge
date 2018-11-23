@@ -19,4 +19,8 @@ class TransactionsController < ApplicationController
     @user = User.find_by(id: params[:id])
   end
 
+  def transaction_params
+    Params.require(:transaction).permit(:coin_id, :api_user_id)
+  end
+
 end
