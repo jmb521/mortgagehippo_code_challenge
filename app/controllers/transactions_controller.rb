@@ -20,7 +20,7 @@ class TransactionsController < ApplicationController
   end
 
   def transaction_params
-    Params.require(:transaction).permit(:coin_id, :api_user_id)
+    params.require(:transaction).permit(:coin_id, :api_user_id)
   end
 
 end

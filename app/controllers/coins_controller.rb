@@ -1,5 +1,5 @@
 class CoinsController < ApplicationController
-  before_action :set_coin, only: [show, edit]
+  before_action :set_coin, only: [:show, :edit]
   def index
     @coins = Coin.all
 
@@ -33,6 +33,6 @@ class CoinsController < ApplicationController
   end
 
   def coin_params
-    Params.require(:coin).permit(:name, :value)
+    params.require(:coin).permit(:name, :value)
   end
 end
