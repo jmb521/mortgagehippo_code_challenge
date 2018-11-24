@@ -1,2 +1,3 @@
 class ApiUsersController < ApplicationController
+  
 end
