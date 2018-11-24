@@ -1,11 +1,15 @@
 class TransactionsController < ApplicationController
-  before_action :set_user, only: [index, by_user]
+
 
   def index
+    @transactions = Transaction.all
+    render json: @transactions
   end
 
 
   def create
+
+    @transaction = Transaction.create(transaction_params)
   end
 
   def by_user
@@ -14,12 +18,9 @@ class TransactionsController < ApplicationController
 
   private
 
-  def set_user
-    @user = User.find_by(id: params[:id])
-  end
 
   def transaction_params
-    params.require(:transaction).permit(:coin_id, :api_user_id)
+    params.require(:transaction).permit(:id, :coin_id, :api_user_id)
   end
 
 end
