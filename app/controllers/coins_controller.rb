@@ -1,5 +1,5 @@
 class CoinsController < ApplicationController
-  before_action :set_coin, only: [:show, :edit]
+
   def index
     @coins = Coin.all
 
@@ -7,32 +7,39 @@ class CoinsController < ApplicationController
   end
 
   def show
+    @coin = Coin.find_by(:id => params[:id])
     render json: @coin
   end
 
-  def new
-    @coin = Coin.new
-  end
 
   def create
     @coin = Coin.create(coin_params)
   end
 
-  def edit
+  def update
+    @coin = Coin.find_by(id: params[:id])
 
+    @coin.update(coin_params)
   end
 
-  def update
-    @coin.update(coin_params)
+  def destroy
+    @coin = Coin.find_by(coin_params)
+    @coin.delete
+  end
+
+  def total
+    total = 0
+    Coin.all.each do |c|
+      total += c.value.to_f.round(2)
+      total = total.round(2)
+    end
+    render json: '%.2f' % total
   end
 
   private
 
-  def set_coin
-    @coin = Coin.find_by(:id => params[:id])
-  end
 
   def coin_params
-    params.require(:coin).permit(:name, :value)
+    params.require(:coin).permit(:id, :name, :value)
   end
 end
