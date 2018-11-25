@@ -1,6 +1,6 @@
 class CoinsController < ApplicationController
 
-   
+
   def index
     @coins = Coin.all
 
@@ -31,7 +31,7 @@ class CoinsController < ApplicationController
   def total
     total = 0
     Coin.all.each do |c|
-      total += c.value.to_f.round(2)
+      total += c.value.to_f.round(2) * c.quantity
       total = total.round(2)
     end
     render json: '%.2f' % total
