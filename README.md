@@ -25,6 +25,5 @@ include attributes: name, value
 
 Transaction Routes:
 
-To create a new transaction
-POST '/transactions'
-possible attributes:
+Make a Deposit:
+  In order to make a deposit you will need the id of the 
