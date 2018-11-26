@@ -5,7 +5,7 @@ class Coin < ApplicationRecord
   after_create :set_default_quantity
 
   def set_default_quantity
-    self.quantity = self.quantity | 1
+    self.quantity = self.quantity | 0
   end
 
 end
