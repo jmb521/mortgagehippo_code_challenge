@@ -6,21 +6,24 @@ class TransactionsController < ApplicationController
     render json: @transactions
   end
 
-
-  # def create
-  #   binding.pry
-  #
-  #   @transaction = Transaction.create(transaction_params)
-  # end
-
+# check to make sure that the transaction can go through in order to subtract the coin amount
   def withdrawal
 
+    @coin = Coin.find_by(:id => params[:coin_id])
+    if @coin && @coin.quantity > 0
+      @transaction = Transaction.create(:coin_id => @coin.id, :api_user_id => @current_user.id, :deposit_or_withdrawal => "withdrawal")
+      @coin.quantity -= 1
+      @coin.save
+      render json: "Successfully withdrew coin"
+    else
+      render json: "Either the coin doesn't exist or there are not sufficient quantity to withdrawal"
+    end
   end
 
   def deposit
     #find the coin that you want to increment
     #increase the quantity of the coin
-    
+
     @coin = Coin.find_by(:id => params[:coin_id])
     if @coin
       @coin.quantity += 1
@@ -38,6 +41,9 @@ class TransactionsController < ApplicationController
   end
 
   def by_user
+
+    @by_user = Transaction.all.order(:api_user_id)
+    render json: @by_user
   end
 
   private
