@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :admins
   get 'coins/total' => "coins#total"
   get 'transactions/by_user' => "transactions#by_user"
   post '/transactions/deposit' => "transactions#deposit"
