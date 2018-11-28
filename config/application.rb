@@ -26,7 +26,11 @@ module CoinMachine
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-
+    config.action_mailer.delivery_method = :sendgrid_actionmailer
+    config.action_mailer.sendgrid_actionmailer_settings = {
+      api_key: ENV['SENDGRID_API_KEY'],
+      raise_delivery_errors: true
+}
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
