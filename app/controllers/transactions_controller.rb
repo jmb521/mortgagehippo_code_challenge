@@ -14,8 +14,13 @@ class TransactionsController < ApplicationController
       @transaction = Transaction.create(:coin_id => @coin.id, :api_user_id => @current_user.id, :deposit_or_withdrawal => "withdrawal")
       @coin.quantity -= 1
       @coin.save
+      if @coin.quantity < 4
+        AdminMailer.low_inventory_alert(@coin).deliver
+        binding.pry
+      end
       render json: "Successfully withdrew coin"
     else
+
       render json: "Either the coin doesn't exist or there are not sufficient quantity to withdrawal"
     end
   end
