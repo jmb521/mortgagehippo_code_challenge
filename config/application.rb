@@ -35,15 +35,7 @@ module CoinMachine
       api_key: ENV['SENDGRID_API_KEY'],
       raise_delivery_errors: true
     }
-#     config.action_mailer.smtp_settings = {
-#       address: "smtp.sendgrid.net",
-#       port: 587,
-#       authentication: "plain",
-#       user_name: ENV["SENDGRID_USERNAME"],
-#       password: ENV["SENDGRID_PASSWORD"],
-#       domain: 'jenniferscoinmachine.herokuapp.com',
-#       enable_starttls_auto: true,
-# }
+#     
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
