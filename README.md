@@ -5,7 +5,7 @@ Welcome to my Coin Machine API
  <br />
  The url for the api is https://jenniferscoinmachine.herokuapp.com
  <br />
- Below are the possible routes and corresponding attributes. 
+ Below are the possible routes and corresponding attributes.
 
  <br />
 
@@ -13,7 +13,7 @@ Welcome to my Coin Machine API
 **Coin Routes:**
 
 | Method | Action | Route | Attributes | Notes |
-|--------|--------|------------|-------|
+|--------|--------|------|------|-------|
 | GET |  INDEX | /coins|           | View all coins |
 | GET |  SHOW | /coins/:id | id of the coin| View specific coin|
 | GET | Total | /coins/total |    | View the total value of all coins|
