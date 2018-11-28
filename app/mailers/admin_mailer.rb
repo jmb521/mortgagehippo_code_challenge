@@ -6,8 +6,8 @@ class AdminMailer < ApplicationMailer
       @coin = coin
 
       mail( :to => "#{@admin}",
-    :subject => "#{coin.name} with a value of #{coin.value} is running low on inventory",
-    :body => "testing config settings #{ENV["SENDGRID_USERNAME"]}")
+    :subject => "#{ENV["SENDGRID_USERNAME"]} #{coin.name} with a value of #{coin.value} is running low on inventory ",
+    :body => "testing config settings ")
     end
 
 end
