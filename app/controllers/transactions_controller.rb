@@ -16,7 +16,7 @@ class TransactionsController < ApplicationController
       @coin.save
       if @coin.quantity < 4
         AdminMailer.low_inventory_alert(@coin).deliver
-        binding.pry
+        
       end
       render json: "Successfully withdrew coin"
     else
