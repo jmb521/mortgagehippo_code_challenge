@@ -2,6 +2,13 @@ Welcome to my Coin Machine API
 
  > by Jennifer Pazos
 
+ <br />
+ The url for the api is https://jenniferscoinmachine.herokuapp.com
+ <br />
+ Below are the possible routes and corresponding attributes. 
+
+ <br />
+
 
 **Coin Routes:**
 
