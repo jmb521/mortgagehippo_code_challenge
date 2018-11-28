@@ -1,29 +1,28 @@
 Welcome to my Coin Machine API
 
-by Jennifer Pazos
+ > by Jennifer Pazos
 
 
-Coin Routes:
+**Coin Routes:**
 
-To see all the coins in the machine
-GET '/coins'
-
-To see an individual coin
-GET '/coins/:id'
-
-To edit a coin's attributes
-PUT '/coins/:id'
-possible attributes to edit: name, value, quantity
-
-To delete a coin
-DELETE '/coins/:id'
-
-To create a new coin
-POST '/coins'
-include attributes: name, value
+| Method | Action | Route | Attributes | Notes |
+|--------|--------|------------|-------|
+| GET |  INDEX | /coins|           | View all coins |
+| GET |  SHOW | /coins/:id | id of the coin| View specific coin|
+| GET | Total | /coins/total |    | View the total value of all coins|
+| POST | CREATE | /coins | name, value, quantity | quantity will default to 0 if not provided|
+| PUT | UPDATE | /coins/:id | id of the coin, name, value, quantity| |
+| DELETE | DESTROY | /coins/:id | id of the coin |Delete a coin from the machine|
 
 
-Transaction Routes:
 
-Make a Deposit:
-  In order to make a deposit you will need the id of the 
+
+
+**Transaction Routes:**
+
+| Method | Action | Route | Attributes | Notes|
+|--------|--------|-------|------------|------|
+| GET | INDEX |/transactions||View all transactions|
+| GET | by_user | /transactions/by_user | |View all transactions in order of user|
+| POST | DEPOSIT | /transactions/deposit | coin_id | Deposit a coin|
+| POST | WITHDRAWAL | /transactions/withdrawal | coin_id | Withdraw a coin|
