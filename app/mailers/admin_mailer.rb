@@ -5,8 +5,9 @@ class AdminMailer < ApplicationMailer
       @admin = Admin.all.map {|admin| admin.email}.join(", ")
       @coin = coin
 
+      @total = Coin.coin_total
       mail( :to => "#{@admin}",
-    :subject => "#{coin.name} with a value of #{coin.value} is running low on inventory ",
+    :subject => "Coin: #{coin.name} only has #{coin.quantity} left! ",
     )
     end
 

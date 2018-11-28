@@ -14,9 +14,7 @@ class TransactionsController < ApplicationController
       @transaction = Transaction.create(:coin_id => @coin.id, :api_user_id => @current_user.id, :deposit_or_withdrawal => "withdrawal")
       @coin.quantity -= 1
       @coin.save
-      if @coin.quantity < 4
-
-        
+      if @coin.quantity < 5
         AdminMailer.low_inventory_alert(@coin).deliver
 
       end

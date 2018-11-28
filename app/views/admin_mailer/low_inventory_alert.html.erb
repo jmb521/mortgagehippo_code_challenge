@@ -6,7 +6,7 @@
   <body>
     <h1>Dear Admins,
 
-    <p>Please be advised that <%= @coin.name %> with a value of <%= @coin.value %> is low on inventory.</p>
-    
+    <p>Coin: <%= @coin.name %> only has <%= @coin.quantity %> remaining.</p>
+    <p>The total balance of all coins is $<%= @total %></p>
   </body>
 </html>
