@@ -15,7 +15,9 @@ class TransactionsController < ApplicationController
       @coin.quantity -= 1
       @coin.save
       if @coin.quantity < 4
-        puts "#{ENV["SENDGRID_USERNAME"]}"
+
+        ENV["SENDGRID_USERNAME"]
+        binding.pry
         AdminMailer.low_inventory_alert(@coin).deliver
 
       end
